@@ -75,11 +75,16 @@ body * {
   top: 50%;
   left: 0px;
   transform: translateY(-50%);
+  animation: slide-out 0.4s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
+  border: 1px solid var(--highlight-color);
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -162,5 +167,25 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-descktop-light.jpg);
+  }
+}
+
+/* animações */
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
